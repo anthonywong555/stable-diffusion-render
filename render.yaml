@@ -1,0 +1,7 @@
+services:
+- type: web
+  name: stable-diffusion-rest-api
+  plan: starter
+  region: oregon
+  env: docker
+  numInstances: 1
