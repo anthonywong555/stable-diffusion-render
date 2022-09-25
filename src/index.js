@@ -44,9 +44,10 @@ app.post('/generate', async (req, res) => {
 
     // Generate Public Facing URLs.
     const shareableResults = images.map((anImage) => {
+      const {buffer, ...newAnImage} = anImage;
       const filePath = anImage.filePath.replace('/home/node/app/', '');
       const fullURL = `${process.env.PRODUCTION_BASE_URL}/${filePath}`;
-      return {...anImage, filePath: fullURL}
+      return {...newAnImage, filePath: fullURL}
     })
 
     res.status(201).send(shareableResults);; // I think this is the appropriate status code. Why not.
