@@ -44,9 +44,9 @@ app.post('/generate', async (req, res) => {
 
     // Generate Public Facing URLs.
     const shareableResults = images.map((anImage) => {
-      const {buffer, ...newAnImage} = anImage;
-      const filePath = anImage.filePath.replace('/home/node/app/', '');
-      const fullURL = `${process.env.PRODUCTION_BASE_URL}/${filePath}`;
+      const {buffer, filePath, ...newAnImage} = anImage;
+      const tmpFilePath = filePath.replace('/home/node/app/', '');
+      const fullURL = `${process.env.PRODUCTION_BASE_URL}/${tmpFilePath}`;
       return {...newAnImage, imageUrl: fullURL}
     })
 
