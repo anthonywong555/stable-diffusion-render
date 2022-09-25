@@ -47,7 +47,7 @@ app.post('/generate', async (req, res) => {
       const {buffer, ...newAnImage} = anImage;
       const filePath = anImage.filePath.replace('/home/node/app/', '');
       const fullURL = `${process.env.PRODUCTION_BASE_URL}/${filePath}`;
-      return {...newAnImage, filePath: fullURL}
+      return {...newAnImage, imageUrl: fullURL}
     })
 
     res.status(201).send(shareableResults);; // I think this is the appropriate status code. Why not.
