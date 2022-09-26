@@ -21,7 +21,7 @@ $ cp .env-example .env
 docker compose -f "docker-compose.dev.yml" up -d --build
 ```
 
-4. Send a POST request to the `localhost:8080/generate`
+1. Send a POST request to `localhost:8080/generate`
 
 
 ```json
@@ -30,7 +30,7 @@ docker compose -f "docker-compose.dev.yml" up -d --build
 }
 ```
 
-## Render:
+## Render
 
 1. Fork this repo and click the button below to try it out!
 
