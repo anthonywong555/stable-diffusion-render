@@ -2,9 +2,35 @@
 
 This application is a Node JS server that will make an API Request to Stable Diffusion.
 
-## Render:
+## Docker
 
-Fork this repo and click the button below to try it out:
+1. Execute the following command:
+
+```sh
+$ git clone https://github.com/anthonywong555/Stable-Diffusion-SMS
+$ cd Stable-Diffusion-SMS
+$ npm install
+$ cp .env-example .env
+```
+
+2. Put all your credentials in the **.env** file.
+
+3. Execute the following command:
+
+```sh
+docker compose -f "docker-compose.dev.yml" up -d --build
+```
+
+4. Send a POST request to the `localhost:8080/generate`
+
+
+```json
+{
+    "prompt": "Shiba Inu wearing a top hat."
+}
+```
+
+## Render:
 
 1. Fork this repo and click the button below to try it out!
 
